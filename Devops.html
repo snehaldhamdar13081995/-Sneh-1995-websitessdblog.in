@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWS DevOps | ssdblog.online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-index.css">
+  <link rel="stylesheet" href="carousel.css">
+</head>
+
+<body>
+
+<header class="top-ribbon">
+  <div class="ribbon-left">
+    <a href="index.html" class="logo-button">
+      <img src="icon.png" alt="SSD Blog Logo">
+    </a>
+  </div>
+
+  <nav class="ribbon-right">
+    <a href="Cloud-Computing.html">Cloud Computing AWS</a>
+    <a href="Devops.html" class="active">DevOps</a>
+    <a href="Job-assistance.html">Job Assistance</a>
+    <a href="Projects.html">Projects</a>
+    <a href="Internships.html">Internships & Certifications</a>
+  </nav>
+
+  <button id="menuBtn" aria-label="Open menu">
+    <img src="menu-icon.png" alt="Menu">
+  </button>
+
+  <div id="overlay"></div>
+
+  <nav id="sideNav" aria-label="Main navigation">
+    <a href="index.html#mentor">About Us</a>
+    <a href="courses.html">Our Courses</a>
+    <a href="knowledge-base.html">Knowledge Base</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>AWS DevOps Engineer Training</h1>
+  <p class="hero-sub typing-container">
+    <span data-text="Syllabus covering CI/CD pipelines, IaC, containers, monitoring, and AWS DevOps Professional certification preparation." data-strong="true"></span>
+</p>
+  </section>
+
+<!-- DEVOPS SYLLABUS SECTION -->
+<section class="devops-showcase">
+
+  <!-- Intro -->
+  <div class="projects-intro typing-container" style="font-size: 1.6rem;">
+    <span data-text="Master AWS DevOps: From fundamentals to production-grade CI/CD pipelines and certification success" data-strong="true"></span>
+  </div>
+
+  <!-- Syllabus Level Highlights -->
+  <div class="syllabus-levels">
+    <div class="level-card">
+      <h3>Foundational</h3>
+      <p>Git, Linux, AWS basics & CI/CD concepts</p>
+    </div>
+    <div class="level-card">
+      <h3>Core DevOps</h3>
+      <p>CodePipeline, CloudFormation, ECS/EKS orchestration</p>
+    </div>
+    <div class="level-card">
+      <h3>Advanced Production</h3>
+      <p>Monitoring, security, cost optimization & reliability</p>
+    </div>
+  </div>
+
+  <!-- Detailed Syllabus Accordion -->
+  <div class="syllabus-accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">1. AWS & DevOps Fundamentals</div>
+      <div class="accordion-content">
+        <ul>
+          <li>DevOps principles and culture</li>
+          <li>DevOps lifecycle in AWS</li>
+          <li>Overview of AWS global infrastructure</li>
+          <li>Shared Responsibility Model</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">2. Linux & Networking Basics</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Linux commands and file system</li>
+          <li>Users, permissions, services</li>
+          <li>Process and log management</li>
+          <li>Networking basics (ports, DNS, load balancing)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">3. Version Control with Git</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Git fundamentals</li>
+          <li>GitHub / CodeCommit workflows</li>
+          <li>Branching and merging strategies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">4. Continuous Integration on AWS</div>
+      <div class="accordion-content">
+        <ul>
+          <li>CI concepts</li>
+          <li>AWS CodeCommit</li>
+          <li>AWS CodeBuild</li>
+          <li>Buildspec files</li>
+          <li>Integrating Git repositories</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">5. Continuous Delivery & Deployment</div>
+      <div class="accordion-content">
+        <ul>
+          <li>CI/CD pipeline design</li>
+          <li>AWS CodePipeline</li>
+          <li>Blue/Green deployments</li>
+          <li>Canary deployments</li>
+          <li>Automated testing integration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">6. Infrastructure as Code (IaC)</div>
+      <div class="accordion-content">
+        <ul>
+          <li>IaC concepts</li>
+          <li>AWS CloudFormation</li>
+          <li>Writing templates (YAML/JSON)</li>
+          <li>Stacks, change sets</li>
+          <li>CloudFormation best practices</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">7. Containerization on AWS</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Docker fundamentals</li>
+          <li>Amazon Elastic Container Registry (ECR)</li>
+          <li>Container image lifecycle</li>
+          <li>Security best practices</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">8. Container Orchestration</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Amazon ECS (EC2 & Fargate)</li>
+          <li>Amazon EKS (overview)</li>
+          <li>Task definitions and services</li>
+          <li>Auto scaling containers</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">9. Configuration & Automation</div>
+      <div class="accordion-content">
+        <ul>
+          <li>AWS Systems Manager</li>
+          <li>Parameter Store</li>
+          <li>Patch Manager</li>
+          <li>Run Command</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">10. Monitoring, Logging & Observability</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Amazon CloudWatch (metrics, logs, alarms)</li>
+          <li>AWS CloudTrail</li>
+          <li>Centralized logging</li>
+          <li>Application monitoring</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">11. Security & DevSecOps</div>
+      <div class="accordion-content">
+        <ul>
+          <li>IAM roles and policies</li>
+          <li>Secrets Manager</li>
+          <li>KMS encryption</li>
+          <li>Security best practices in pipelines</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">12. Cost Optimization & Reliability</div>
+      <div class="accordion-content">
+        <ul>
+          <li>Cost optimization strategies</li>
+          <li>Auto Scaling</li>
+          <li>Fault tolerance</li>
+          <li>High availability design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certification Focus -->
+  <div class="cert-focus">
+    <h2>AWS Certified DevOps Engineer – Professional</h2>
+    <p><strong>Prerequisites:</strong> AWS Developer Associate or SysOps Associate (recommended)</p>
+    <p>Hands-on projects, interview prep, and certification guidance included.</p>
+  </div>
+
+</section>
+
+<script src="script-index.js"></script>
+<script>
+  // Accordion functionality - add to script-index.js
+  document.addEventListener('DOMContentLoaded', () => {
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isActive = header.classList.contains('active');
+        
+        // Close all
+        document.querySelectorAll('.accordion-header').forEach(h => {
+          h.classList.remove('active');
+          h.nextElementSibling.classList.remove('active');
+        });
+        
+        // Open clicked if not already
+        if (!isActive) {
+          header.classList.add('active');
+          content.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

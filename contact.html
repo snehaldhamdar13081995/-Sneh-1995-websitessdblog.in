@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>Contact us - SSDBlog.online</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-index.css">
+</head>
+
+<body>
+  <header class="top-ribbon">
+  <div class="ribbon-left">
+    <a href="index.html" class="logo-button">
+    <img src="icon.png" alt="Logo"></a>
+  </div>
+  <nav class="ribbon-right">
+    <a href="Cloud-Computing.html">Cloud Computing AWS</a>
+    <a href="Devops.html">Devops</a>
+    <a href="Job-assistance.html">Job assistance </a>
+    <a href="Projects.html">Projects</a>
+    <a href="Internships.html">Internships & Certifications</a>
+  </nav>
+  <button id="menuBtn" aria-label="Open menu"><img src="menu-icon.png" alt="Menu"> </button>
+  <div id="overlay"></div>
+
+<nav id="sideNav" aria-label="Main navigation">
+  <a href="index.html#mentor">About Us</a>
+  <a href="courses.html">Our Courses</a>
+  <a href="knowledge-base.html">Knowledge Base</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<header class="hero">
+  <h1>Contact Us</h1>
+  <p class="hero-sub">
+    Get in touch for enrollment, guidance, or career counselling.
+  </p>
+ <div class="right-form">
+      <h2>Enquiry Form</h2>
+      <form id="enquiryForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required />
+        <label for="interest">Interested In</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select...</option>
+          <option value="aws_comprehensive">AWS Comprehensive Course (₹3000/month)</option>
+          <option value="aws_express">AWS Express (₹8000/month, Daily)</option>
+          <option value="cloud_seminar">Cloud Seminar (₹99, 1 hour)</option>
+          <option value="internship">Internship / Job Support</option>
+        </select>
+        <label for="message">Your Query</label>
+        <textarea id="message" name="message" rows="3" placeholder="Type your question..."></textarea>
+        <button type="submit">Enquire Now</button>
+      </form>
+    </div>
+  </div>
+  <div class="hero-social">
+    <p class="hero-touch">Get in touch</p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/110320496/admin/page-posts/published/" target="_blank" aria-label="LinkedIn">
+        <img src="linkedin.svg" alt="LinkedIn">
+      </a>
+
+      <a href="https://www.youtube.com/channel/UCwjU4PKteOtkHCRxyiyZaZQ" target="_blank" aria-label="YouTube">
+        <img src="youtube.svg" alt="YouTube">
+      </a>
+
+      <a href="https://wa.me/9322854435" target="_blank" aria-label="WhatsApp">
+        <img src="whatsapp.svg" alt="WhatsApp">
+      </a>
+
+      <a href="mailto:snehal.pdhamdar@gmail.com?subject=Enquiry%20Mail" aria-label="Email">
+        <img src="mail.svg" alt="Email">
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61584021765850" target="_blank" aria-label="Facebook">
+        <img src="facebook.svg" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/snehaldhamdar123/" target="_blank" aria-label="Instagram">
+        <img src="instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://x.com/SnehalDhamdar" target="_blank" aria-label="Twitter">
+        <img src="twitter.svg" alt="Twitter">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+</header>
+
+<a href="https://wa.me/9322854435" class="whatsapp" target="_blank">WhatsApp Us</a>
+
+
+
+<script>
+  const form = document.getElementById('enquiryForm');
+  const statusDiv = document.createElement('div');
+  form.parentNode.appendChild(statusDiv);
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.onsubmit = async function (e) {
+    e.preventDefault();
+
+    // Disable the button immediately
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    const timestamp = new Date().toLocaleString();
+    const row = [
+      formData.get("name"),
+      formData.get("phone"),
+      formData.get("email"),
+      formData.get("interest"),
+      formData.get("message"),
+      timestamp
+    ];
+
+    try {
+      const res = await fetch(
+        "https://v1.nocodeapi.com/snehal_dhamdar/google_sheets/doPGVKHsClDTDPQN?tabId=Sheet1",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify([row])
+        }
+      );
+
+      const text = await res.text();
+      console.log("RAW RESPONSE:", text);
+
+      if (res.ok) {
+        statusDiv.innerText = "Your enquiry has been submitted successfully we will contact you at short Notice!";
+        statusDiv.style.color = "green";
+        form.reset();
+      } else {
+        statusDiv.innerText = "Submission failed: " + text;
+        statusDiv.style.color = "red";
+        submitBtn.disabled = false; // Re-enable if failed
+      }
+
+    } catch (err) {
+      statusDiv.innerText = "Network error: " + err.message;
+      statusDiv.style.color = "red";
+      submitBtn.disabled = false; // Re-enable if failed
+    }
+  };
+</script>
+
+<script src="script-index.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,413 @@
+:root{
+      --blue1:#2193b0;
+      --blue2:#6dd5ed;
+      --blue3:#3c8ce7;
+      --ink:#1e2a3a;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+    margin:0;
+    font-family:'Roboto', Arial, sans-serif;
+    background: url("bg_image.jpg.png");
+    color: var(--ink);
+    }
+
+
+    /* Header */
+    header{
+      text-align:center;
+      padding:2rem 1.2rem 2.2rem 1.2rem;
+      background:linear-gradient(90deg, var(--blue3) 0%, #00eaff 100%);
+      color:#fff;
+      border-radius:0 0 40px 40px;
+      box-shadow:0 2px 18px 0 rgba(0,150,255,0.2);
+      position:relative;
+      overflow:hidden;
+    }
+    h1{
+      font-family:'Montserrat', Arial, sans-serif;
+      font-size:2.8rem;
+      margin:0 0 0.8rem 0;
+      letter-spacing:1px;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.589), 
+      0 0 6px rgba(0,0,0,0.35);
+    }
+    .hook{font-size:1.45rem;margin:0.4rem 0 0.6rem 0;  text-shadow: 0 0 1.5px rgba(0,0,0,0.30),0 0 3px rgba(0,0,0,0.25);}
+    .subhook{color:#38435f;font-size:1.11rem;font-weight:500;margin:0}
+
+    /* Hero media band right after header */
+    .hero-band{
+      display:flex;
+      align-items:stretch;
+      gap:1.2rem;
+      padding:1.2rem 1rem 0 1rem;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .hero-text{
+      flex:1 1 60%;
+      background:#ffffff;
+      border-radius:18px;
+      padding:1rem 1.2rem;
+      box-shadow:0 2px 10px rgba(50,160,255,0.08);
+    }
+    .hero-image{
+      flex:1 1 40%;
+      display:flex;
+      justify-content:flex-end;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 18px;
+      box-shadow: 0 6px 22px rgba(30,100,200,0.25);
+      object-fit: cover;
+
+      background: transparent;      /* REMOVE the white background */
+      display: block;               /* prevents inline-gap issues */
+    }
+
+    /* Benefits */
+    .benefits{
+      background: #ADFF2F;
+      border-radius:20px;
+      box-shadow:0 2px 10px rgba(50,160,255,0.08);
+      padding:1.7rem 1.2rem;
+      width:90%;
+      max-width:1200px;
+      margin:1.2rem auto 0.8rem auto;
+    }
+    .benefits ul{padding-left:1.2rem;margin:0}
+    .benefits li{margin-bottom:0.45rem;font-size:1.05rem}
+
+    /* Cards */
+    .cards{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:2rem;
+      margin:2rem 0 1.2rem 0;
+    }
+    .card{
+      background:linear-gradient(140deg, #4eaaf8 0%, #8fd3fe 100%);
+      color:#fff;
+      border-radius:17px;
+      box-shadow:0 4px 18px rgba(100,200,255,0.14);
+      padding:2rem 1.3rem 1.2rem 1.3rem;
+      max-width:340px;
+      min-width:260px;
+      text-align:center;
+      transition:transform 0.12s;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+    .card:hover{transform:translateY(-6px) scale(1.03)}
+    .card .tag{
+      background:#fff;color:#2196f3;border-radius:11px;
+      padding:0.28rem 0.7rem;font-weight:600;display:inline-block;
+      margin-bottom:0.9rem;font-size:1rem
+    }
+    .price{
+      display:inline-block;margin:1rem 0 0.7rem 0;font-size:1.18rem;
+      font-weight:800;background:#fff;color:#30a7e7;border-radius:7px;
+      padding:0.2rem 1rem;letter-spacing:1px
+    }
+    .btn, .btn-link{
+      margin-top:1rem;background:linear-gradient(90deg, #266086 0%, #1bbef9 100%);
+      color:#fff;border:none;padding:0.65rem 1.2rem;border-radius:30px;
+      font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer
+    }
+    .btn:hover{background:#0f4473}
+    .btn-link{
+      background:none;color:#1950a7;text-decoration:underline;padding:0;border-radius:0
+    }
+
+    /* Modal */
+    #courseDetails{
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);
+      z-index:1000;overflow:auto;padding:1.2rem
+    }
+    .modal-card{
+      margin:3% auto;background:#fff;border-radius:22px;max-width:780px;
+      padding:1.4rem 1.2rem 1.6rem 1.2rem
+    }
+    .modal-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:1rem
+    }
+    .modal-grid > div{
+      background:#f7fbfe;border:1px solid #e9eefa;border-radius:14px;padding:1rem
+    }
+    h2,h3{font-family:'Montserrat', Arial, sans-serif;margin:0.2rem 0 0.7rem 0}
+    .pill{
+      display:inline-block;background:#e8f4ff;color:#1360b3;border:1px solid #cde7ff;
+      border-radius:999px;padding:0.2rem 0.6rem;margin:0.15rem 0.25rem;font-size:0.92rem
+    }
+    .stacked-list{padding-left:1.1rem;margin:0.3rem 0}
+    .stacked-list li{margin:0.35rem 0}
+
+    /* Extra images strip (optional additional visuals) */
+    .images{
+      display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;
+      margin:2.2rem 0 1.3rem 0
+    }
+    .images img{
+      border-radius:17px;width:240px;box-shadow:0 3px 18px rgba(30,100,200,0.15);
+      object-fit:cover;background:#e7f6fe
+    }
+
+    @media(max-width:900px){
+      .hero-band{flex-direction:column}
+      .modal-grid{grid-template-columns:1fr}
+    }
+      /* ✅ Project Modal Styles */
+  #project-modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 1.5rem;
+    overflow: auto;
+  }
+
+  .modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 4% auto;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+  }
+
+  .modal-close:hover {
+    color: #444;
+  }
+
+ /* About Myself Section */
+.tutor {
+  background: linear-gradient(40deg, #87CEFA, #005A9C);
+  padding: 2rem 1.2rem;
+  max-width: 900px;
+  margin: 2.5rem auto;
+  border-radius: 20px;
+  box-shadow: 0 3px 14px rgba(30, 100, 200, 0.1);
+}
+
+.tutor-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #1360b3;
+  text-align: center;
+}
+
+.tutor-info {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  color: #1e2a3a;
+}
+
+.tutor-info h3 {
+  margin: 0.3rem 0 0.7rem 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f5489;
+}
+
+.tutor-card {
+  display: flex;
+  justify-content: space-between; /* pushes image to the right */
+  align-items: flex-start;        /* keeps image aligned to top */
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.tutor-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  background: #e7f6fe;
+}
+
+/* Career with us section */
+.careers {
+  background: linear-gradient(150deg, #87CEFA, #005A9C);;
+  padding: 2rem 1.2rem;
+  max-width: 900px;
+  margin: 2.5rem auto;
+  border-radius: 20px;
+  box-shadow: 0 3px 14px rgba(30, 100, 200, 0.1);
+}
+
+.careers-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #1360b3;
+  text-align: center;
+}
+
+.careers-info {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  color: #1e2a3a;
+}
+
+.careers-info h3 {
+  margin: 0.3rem 0 0.7rem 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f5489;
+}
+
+.careers-card {
+  display: flex;
+  justify-content: space-between; /* pushes image to the right */
+  align-items: flex-start;        /* keeps image aligned to top */
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* Responsive layout tweak */
+@media (max-width: 700px) {
+  .tutor-card {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .tutor-photo {
+    margin-top: 1rem;
+  }
+}
+
+.modal-bg {
+  display: none;           /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  animation: zoomIn 0.3s ease;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+.aws-btn {
+    display: block;          /* makes button behave like a block */
+    width: fit-content;      /* makes width fit the text */
+    margin: 20px auto 0;     /* this centers it */
+    background-color: #0b5fff;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.aws-btn:hover {
+    background-color: #0044cc;
+    transform: translateY(-2px);
+}
+
+/* Whatsapp button */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  height: 55px;
+  width: 55px;                 /* icon only */
+  background: #25D366;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  padding: 0;
+
+  overflow: hidden;
+  transition: width 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+
+  z-index: 9999;
+}
+
+/* Expand container on hover */
+.whatsapp-btn:hover {
+  width: 120px;                /* space for text */
+  border-radius: 30px;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+/* Icon */
+.whatsapp-btn img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Text – completely hidden until hover */
+.wa-text {
+  color: #fff;
+  background: #25D366;         /* green pill */
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  position: absolute;
+
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+}
+
+
+/* Text appears only on hover */
+.whatsapp-btn:hover .wa-text {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -1,0 +1,31 @@
+/* carousel.css - Enhanced carousel styles matching Inter font */
+.carousel-container { 
+  position: relative; max-width: 800px; margin: 0 auto; 
+  overflow: hidden; border-radius: 16px; 
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15); 
+}
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.carousel-slide { 
+  min-width: 100%; padding: 3rem; 
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+  text-align: center; box-sizing: border-box; 
+}
+.carousel-slide h3 { font-size: 2rem; color: #1a202c; margin-bottom: 1rem; font-weight: 700; }
+.carousel-slide .slide-sub { font-size: 1.2rem; color: #4a5568; margin-bottom: 1.5rem; font-weight: 500; }
+.carousel-slide ul { list-style: none; padding: 0; max-width: 400px; margin: 0 auto 1.5rem; }
+.carousel-slide li { 
+  background: white; margin: 0.5rem 0; padding: 1rem; 
+  border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-weight: 500; 
+}
+.slide-focus { font-size: 1.1rem; font-style: italic; color: #2d3748; }
+/* Buttons and dots styles as before */
+.carousel-btn { /* ... */ }
+.prev { left: 15px; }
+.next { right: 15px; }
+.carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 2rem; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e0; cursor: pointer; transition: background 0.3s; }
+.dot.active { background: #0c60a5; }
+@media (max-width: 768px) { 
+  .carousel-slide { padding: 2rem 1rem; } 
+  .carousel-slide h3 { font-size: 1.5rem; } 
+}

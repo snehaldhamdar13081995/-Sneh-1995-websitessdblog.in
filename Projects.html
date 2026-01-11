@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWS Projects | ssdblog.online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-index.css">
+  <link rel="stylesheet" href="carousel.css">
+
+</head>
+
+<body>
+
+<header class="top-ribbon">
+  <div class="ribbon-left">
+    <a href="index.html" class="logo-button">
+      <img src="icon.png" alt="SSD Blog Logo">
+    </a>
+  </div>
+
+  <nav class="ribbon-right">
+    <a href="Cloud-Computing.html">Cloud Computing AWS</a>
+    <a href="Devops.html">DevOps</a>
+    <a href="Job-assistance.html">Job Assistance</a>
+    <a href="Projects.html" class="active">Projects</a>
+    <a href="Internships.html">Internships & Certifications</a>
+  </nav>
+
+  <button id="menuBtn" aria-label="Open menu">
+    <img src="menu-icon.png" alt="Menu">
+  </button>
+
+  <div id="overlay"></div>
+
+  <nav id="sideNav" aria-label="Main navigation">
+    <a href="index.html#mentor">About Us</a>
+    <a href="courses.html">Our Courses</a>
+    <a href="knowledge-base.html">Knowledge Base</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>AWS Solutions Architect Projects</h1>
+  <p class="hero-sub typing-container">
+    <span data-text="One-to-one guidance on real-world AWS architecture projects with interview-ready explanations." data-strong="true"></span>
+  </p>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects-showcase">
+
+  <!-- Typing Intro -->
+  <div class="projects-intro typing-container">
+    <span data-text="Explore real-world AWS projects with personalized guidance and interview-ready explanations" data-strong="true"></span>
+  </div>
+
+  <!-- Highlight Cards -->
+  <div class="projects-highlights">
+    <div class="highlight-card">
+      <h3>Personalized Guidance</h3>
+      <p>One-to-one mentoring with deep architecture insights and hands-on support.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Real-World Projects</h3>
+      <p>Industry-aligned architectures matching AWS certifications and job requirements.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Interview Prepared</h3>
+      <p>Master design decisions, trade-offs, and well-architected framework explanations.</p>
+    </div>
+  </div>
+
+  <!-- Carousel - Now properly structured with separate slides -->
+  <div class="carousel-container" data-carousel>
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Slide 1: Beginner -->
+      <div class="carousel-slide">
+        <h3>Beginner & Associate-Level</h3>
+        <p class="slide-sub">Perfect for AWS beginners and students building foundational skills.</p>
+        <ul>
+          <li>Highly Available Multi-AZ Web App (ALB + EC2 + RDS)</li>
+          <li>Serverless API with Lambda, API Gateway & DynamoDB</li>
+          <li>Secure S3 File Upload with IAM Policies & CloudFront</li>
+        </ul>
+        <p class="slide-focus">
+          <strong>Key Focus:</strong> VPC, IAM security, auto-scaling, cost optimization basics
+        </p>
+      </div>
+      <!-- Slide 2: Intermediate -->
+      <div class="carousel-slide">
+        <h3>Intermediate Job-Ready</h3>
+        <p class="slide-sub">Targeted for AWS Associate certs and production deployments.</p>
+        <ul>
+          <li>Multi-Tier App with ASG, ELB & RDS Multi-AZ</li>
+          <li>Disaster Recovery: Pilot Light & Warm Standby Architectures</li>
+          <li>Cost-Optimized ETL Pipeline (Glue + Athena + S3)</li>
+        </ul>
+        <p class="slide-focus">
+          <strong>Key Focus:</strong> High availability, CloudWatch monitoring, Well-Architected decisions
+        </p>
+      </div>
+      <!-- Slide 3: Advanced -->
+      <div class="carousel-slide">
+        <h3>Advanced Professional</h3>
+        <p class="slide-sub">Enterprise-grade solutions for senior roles and Professional certs.</p>
+        <ul>
+          <li>Multi-Account Strategy with Organizations & Control Tower</li>
+          <li>Hybrid Cloud: Direct Connect + Transit Gateway Integration</li>
+          <li>Application Modernization: ECS/EKS Migration Pipeline</li>
+        </ul>
+        <p class="slide-focus">
+          <strong>Key Focus:</strong> Governance, multi-region DR, performance optimization, security pillars
+        </p>
+      </div>
+    </div>
+    <button class="carousel-btn prev" aria-label="Previous slide">❮</button>
+    <button class="carousel-btn next" aria-label="Next slide">❯</button>
+    <div class="carousel-dots" id="carouselDots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+  </div>
+
+</section>
+
+<script src="script-index.js"></script>
+<script>
+  // Pure JS Carousel functionality - add to your script-index.js
+  document.addEventListener('DOMContentLoaded', () => {
+    const carouselContainers = document.querySelectorAll('[data-carousel]');
+    carouselContainers.forEach(container => {
+      const track = container.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const buttons = container.querySelectorAll('.carousel-btn');
+      const dots = container.querySelectorAll('.dot');
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+      }
+
+      buttons[0].addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+      buttons[1].addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+        });
+      });
+
+      // Auto-play every 5 seconds
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }, 5000);
+    });
+  });
+</script>
+</body>
+</html>
