@@ -174,16 +174,53 @@ body.menu-open {
   margin-bottom:12px;
 }
 
-.mentor{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:40px;
-  align-items:center;
+ /* About Myself Section */
+.tutor {
+  background: linear-gradient(40deg, #87CEFA, #005A9C);
+  padding: 2rem 1.2rem;
+  margin: 2.5rem auto;
+  border-radius: 20px;
+  box-shadow: 0 3px 14px rgba(30, 100, 200, 0.1);
 }
 
-.mentor img{
-  width:100%;
-  border-radius:14px;
+.tutor-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #1360b3;
+  text-align: center;
+}
+
+.tutor-info {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  color: #1e2a3a;
+}
+
+.tutor-info h3 {
+  margin: 0.3rem 0 0.7rem 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f5489;
+}
+
+.tutor-card {
+  display: flex;
+  justify-content: space-between; /* pushes image to the right */
+  align-items: flex-start;        /* keeps image aligned to top */
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 40px auto;
+}
+
+.tutor-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  background: #e7f6fe;
 }
 
 .whatsapp{
