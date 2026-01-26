@@ -1,172 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AWS Projects | ssdblog.online</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-index.css">
-  <link rel="stylesheet" href="carousel.css">
+
+<meta charset="UTF-8">
+<title>AWS Projects & Job Assistance | ssdblog.online</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Explore real-world AWS projects and job assistance services. Build job-ready cloud skills with interview preparation and resume guidance at ssdblog.online.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="styles-index.css">
+<link rel="stylesheet" href="carousel.css">
+
+<style>
+
+:root {
+--orange:#ff9900;
+--darkbg:#0f2027;
+--card:#ffffff;
+}
+
+* {
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body {
+margin:0;
+font-family:Inter, Arial, sans-serif;
+background:#f5f7fb;
+}
+
+/* DARK MODE */
+.dark-mode {
+background:#0e1621;
+color:#fff;
+}
+
+.dark-mode .highlight-card,
+.dark-mode .carousel-slide,
+.dark-mode .job-box {
+background:#1b2735;
+color:#fff;
+}
+
+/* HERO (ORANGE REMOVED) */
+.hero {
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+padding:80px 20px;
+text-align:center;
+color:#ffffff;
+}
+
+.hero h1 {
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p {
+font-size:18px;
+opacity:0.9;
+}
+
+/* PROJECT SECTION */
+.projects-showcase,
+.job-section {
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* INTRO */
+.projects-intro {
+font-size:20px;
+font-weight:600;
+text-align:center;
+margin-bottom:40px;
+}
+
+/* HIGHLIGHTS */
+.projects-highlights,
+.job-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-bottom:50px;
+}
+
+.highlight-card,
+.job-box {
+background:var(--card);
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(30px);
+transition:0.6s;
+border-top:4px solid var(--orange);
+}
+
+.highlight-card.show,
+.job-box.show {
+opacity:1;
+transform:translateY(0);
+}
+
+/* CAROUSEL */
+.carousel-slide {
+background:white;
+border-radius:12px;
+padding:30px;
+box-shadow:0 6px 16px rgba(0,0,0,.08);
+border-top:4px solid var(--orange);
+}
+
+/* BUTTONS */
+.sticky-apply {
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--orange);
+padding:14px 24px;
+border-radius:30px;
+font-weight:bold;
+color:#000;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+z-index:999;
+}
+
+/* WHATSAPP */
+.whatsapp-btn {
+position:fixed;
+bottom:90px;
+right:20px;
+background:#25d366;
+color:white;
+padding:14px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+z-index:999;
+}
+
+/* DARK MODE TOGGLE */
+.toggle-btn {
+position:fixed;
+top:80px;
+right:20px;
+background:var(--orange);
+border:none;
+padding:10px 14px;
+border-radius:8px;
+cursor:pointer;
+z-index:999;
+}
+
+/* JOB SECTION */
+.job-title {
+text-align:center;
+font-size:30px;
+color:#ff7a00;
+margin-bottom:20px;
+}
+
+.job-intro {
+text-align:center;
+max-width:900px;
+margin:auto;
+margin-bottom:40px;
+font-size:18px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1 {
+font-size:26px;
+}
+
+.projects-intro,
+.job-intro {
+font-size:16px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<header class="top-ribbon">
+<button class="toggle-btn" onclick="toggleDark()">🌙</button>
+
+<!-- HEADER -->
+  <header class="top-ribbon">
   <div class="ribbon-left">
     <a href="index.html" class="logo-button">
-      <img src="icon.png" alt="SSD Blog Logo">
-    </a>
+    <img src="icon.png" alt="Logo"></a>
   </div>
-
   <nav class="ribbon-right">
     <a href="Cloud-Computing.html">Cloud Computing AWS</a>
-    <a href="Devops.html">DevOps</a>
-    <a href="Job-assistance.html">Job Assistance</a>
-    <a href="Projects.html" class="active">Projects</a>
+    <a href="Devops.html">Devops</a>
+    <a href="Job-assistance.html">Job assistance </a>
+    <a href="Projects.html">Projects</a>
     <a href="Internships.html">Internships & Certifications</a>
   </nav>
-
-  <button id="menuBtn" aria-label="Open menu">
-    <img src="menu-icon.png" alt="Menu">
-  </button>
-
+  <button id="menuBtn" aria-label="Open menu"><img src="menu-icon.png" alt="Menu"> </button>
   <div id="overlay"></div>
 
-  <nav id="sideNav" aria-label="Main navigation">
-    <a href="index.html#tutor">About Us</a>
-    <a href="courses.html">Our Courses</a>
-    <a href="knowledge-base.html">Knowledge Base</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
+<nav id="sideNav" aria-label="Main navigation">
+  <a href="index.html#tutor">About Us</a>
+  <a href="courses.html">Our Courses</a>
+  <a href="knowledge-base.html">Knowledge Base</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="index.html#ssdcareer">SSD Career</a>
+</nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>AWS Solutions Architect Projects</h1>
+<h1>AWS Solutions Architect Projects</h1>
   <p class="hero-sub typing-container">
-    <span data-text="One-to-one guidance on real-world AWS architecture projects with interview-ready explanations." data-strong="true"></span>
-  </p>
+  <span data-text="Real-World Architecture Labs With Interview-Ready Explanations" data-strong="true"></span><br>
+</p>
 </section>
 
-<!-- PROJECTS SECTION -->
+<a href="https://wa.me/9322854435" class="whatsapp" target="_blank">WhatsApp Us</a>
+
+<!-- PROJECTS -->
 <section class="projects-showcase">
 
-  <!-- Typing Intro -->
-  <div class="projects-intro typing-container">
-    <span data-text="Explore real-world AWS projects with personalized guidance and interview-ready explanations" data-strong="true"></span>
-  </div>
+<div class="hero-sub-typing-container">
+<span data-text="Explore hands-on AWS architecture projects aligned with certification and job roles"></span>
+</div>
 
-  <!-- Highlight Cards -->
-  <div class="projects-highlights">
-    <div class="highlight-card">
-      <h3>Personalized Guidance</h3>
-      <p>One-to-one mentoring with deep architecture insights and hands-on support.</p>
-    </div>
-    <div class="highlight-card">
-      <h3>Real-World Projects</h3>
-      <p>Industry-aligned architectures matching AWS certifications and job requirements.</p>
-    </div>
-    <div class="highlight-card">
-      <h3>Interview Prepared</h3>
-      <p>Master design decisions, trade-offs, and well-architected framework explanations.</p>
-    </div>
-  </div>
+<div class="projects-highlights">
 
-  <!-- Carousel - Now properly structured with separate slides -->
-  <div class="carousel-container" data-carousel>
-    <div class="carousel-track" id="carouselTrack">
-      <!-- Slide 1: Beginner -->
-      <div class="carousel-slide">
-        <h3>Beginner & Associate-Level</h3>
-        <p class="slide-sub">Perfect for AWS beginners and students building foundational skills.</p>
-        <ul>
-          <li>Highly Available Multi-AZ Web App (ALB + EC2 + RDS)</li>
-          <li>Serverless API with Lambda, API Gateway & DynamoDB</li>
-          <li>Secure S3 File Upload with IAM Policies & CloudFront</li>
-        </ul>
-        <p class="slide-focus">
-          <strong>Key Focus:</strong> VPC, IAM security, auto-scaling, cost optimization basics
-        </p>
-      </div>
-      <!-- Slide 2: Intermediate -->
-      <div class="carousel-slide">
-        <h3>Intermediate Job-Ready</h3>
-        <p class="slide-sub">Targeted for AWS Associate certs and production deployments.</p>
-        <ul>
-          <li>Multi-Tier App with ASG, ELB & RDS Multi-AZ</li>
-          <li>Disaster Recovery: Pilot Light & Warm Standby Architectures</li>
-          <li>Cost-Optimized ETL Pipeline (Glue + Athena + S3)</li>
-        </ul>
-        <p class="slide-focus">
-          <strong>Key Focus:</strong> High availability, CloudWatch monitoring, Well-Architected decisions
-        </p>
-      </div>
-      <!-- Slide 3: Advanced -->
-      <div class="carousel-slide">
-        <h3>Advanced Professional</h3>
-        <p class="slide-sub">Enterprise-grade solutions for senior roles and Professional certs.</p>
-        <ul>
-          <li>Multi-Account Strategy with Organizations & Control Tower</li>
-          <li>Hybrid Cloud: Direct Connect + Transit Gateway Integration</li>
-          <li>Application Modernization: ECS/EKS Migration Pipeline</li>
-        </ul>
-        <p class="slide-focus">
-          <strong>Key Focus:</strong> Governance, multi-region DR, performance optimization, security pillars
-        </p>
-      </div>
-    </div>
-    <button class="carousel-btn prev" aria-label="Previous slide">❮</button>
-    <button class="carousel-btn next" aria-label="Next slide">❯</button>
-    <div class="carousel-dots" id="carouselDots">
-      <span class="dot active" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-    </div>
-  </div>
+<div class="highlight-card">
+<h3>Personalized Guidance</h3>
+<p>One-to-one mentoring with architecture explanations.</p>
+</div>
+
+<div class="highlight-card">
+<h3>Industry Projects</h3>
+<p>Production-style AWS architectures.</p>
+</div>
+
+<div class="highlight-card">
+<h3>Interview Ready</h3>
+<p>Learn design tradeoffs and well-architected principles.</p>
+</div>
+
+</div>
+
+<div class="carousel-container" data-carousel>
+
+<div class="carousel-track">
+
+<div class="carousel-slide">
+<h3>Beginner & Associate Level</h3>
+<ul>
+<li>Multi-AZ Web App</li>
+<li>Serverless API</li>
+<li>S3 Secure Hosting</li>
+</ul>
+</div>
+
+<div class="carousel-slide">
+<h3>Intermediate Job Ready</h3>
+<ul>
+<li>Auto Scaling Architectures</li>
+<li>Disaster Recovery Designs</li>
+<li>ETL Pipelines</li>
+</ul>
+</div>
+
+<div class="carousel-slide">
+<h3>Advanced Professional</h3>
+<ul>
+<li>Multi Account Governance</li>
+<li>Hybrid Cloud Integration</li>
+<li>EKS Migration Projects</li>
+</ul>
+</div>
+
+</div>
+
+<button class="carousel-btn prev">❮</button>
+<button class="carousel-btn next">❯</button>
+
+</div>
 
 </section>
 
-<script src="script-index.js"></script>
-<script>
-  // Pure JS Carousel functionality - add to your script-index.js
-  document.addEventListener('DOMContentLoaded', () => {
-    const carouselContainers = document.querySelectorAll('[data-carousel]');
-    carouselContainers.forEach(container => {
-      const track = container.querySelector('.carousel-track');
-      const slides = Array.from(track.children);
-      const buttons = container.querySelectorAll('.carousel-btn');
-      const dots = container.querySelectorAll('.dot');
-      let currentIndex = 0;
-      const totalSlides = slides.length;
+<!-- JOB ASSISTANCE SECTION -->
+<section class="job-section">
 
-      function updateCarousel() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-      }
+<h2 class="job-title">AWS Job Assistance – ssdblog.online</h2>
 
-      buttons[0].addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-      });
-      buttons[1].addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-      });
-      dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          updateCarousel();
-        });
-      });
+<p class="job-intro">
+Our job assistance program bridges the gap between learning AWS and becoming job-ready.
+We focus on practical skills, real-world projects, and interview preparation aligned with current cloud industry expectations.
+</p>
 
-      // Auto-play every 5 seconds
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-      }, 5000);
-    });
-  });
-</script>
+<div class="job-grid">
+
+<div class="job-box">
+<h3>Resume & Profile Support</h3>
+<ul>
+<li>Resume review and optimization</li>
+<li>Project-based resume writing guidance</li>
+<li>LinkedIn profile improvement tips</li>
+</ul>
+</div>
+
+<div class="job-box">
+<h3>Interview Preparation</h3>
+<ul>
+<li>AWS interview question practice</li>
+<li>Architecture scenario discussions</li>
+<li>Mock interviews & feedback</li>
+<li>Why-this-service answer guidance</li>
+</ul>
+</div>
+
+<div class="job-box">
+<h3>Real-World Project Experience</h3>
+<ul>
+<li>Job-oriented AWS projects</li>
+<li>Architecture explanation training</li>
+<li>Interview project explanation support</li>
+</ul>
+</div>
+
+<div class="job-box">
+<h3>Certification & Career Guidance</h3>
+<ul>
+<li>AWS certification roadmap planning</li>
+<li>Exam preparation strategies</li>
+<li>Career roadmap (fresher to architect)</li>
+</ul>
+</div>
+
+<div class="job-box">
+<h3>Roles We Prepare You For</h3>
+<ul>
+<li>AWS Solutions Architect</li>
+<li>Cloud Engineer</li>
+<li>DevOps Engineer</li>
+<li>Cloud Support Engineer</li>
+</ul>
+</div>
+
+<div class="job-box">
+<h3>How Our Job Assistance Works</h3>
+<ol>
+<li>Skill assessment & career planning</li>
+<li>Resume & project guidance</li>
+<li>Interview preparation</li>
+<li>Continuous mentoring</li>
+</ol>
+</div>
+
+<div class="job-box">
+<h3>Why Choose ssdblog.online</h3>
+<ul>
+<li>Understanding over memorization</li>
+<li>Real architecture scenarios</li>
+<li>No fake placement promises</li>
+<li>Honest career guidance</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+<p>© 2026 ssdblog.online | All Rights Reserved</p>
+</footer>
+
+<script src="script-index.js" ></script>
+
+
 </body>
 </html>

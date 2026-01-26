@@ -153,16 +153,33 @@ body.menu-open {
   margin:15px 0;
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  font-weight:700;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  background:#ff9900;
-  color:#111;
-  margin-top:10px;
+.btn {
+  display: inline-block;
+  padding: 14px 34px;          /* Bigger clickable area */
+  font-size: 14px;             /* Larger text */
+  font-weight: 700;            /* Strong but clean bold */
+  letter-spacing: 0.5px;       /* Improves readability */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ff9900;
+  color: #111;
+  margin-top: 12px;
+  transition: all 0.25s ease;
+}
+
+/* Hover Effect */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 153, 0, 0.4);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 16px;
+    padding: 12px 26px;
+  }
 }
 
 .btn.primary{
@@ -178,7 +195,7 @@ body.menu-open {
 .tutor {
   background: linear-gradient(40deg, #87CEFA, #005A9C);
   padding: 2rem 1.2rem;
-  margin: 2.5rem auto;
+  margin: 2.5rem auto;s
   border-radius: 20px;
   box-shadow: 0 3px 14px rgba(30, 100, 200, 0.1);
 }
