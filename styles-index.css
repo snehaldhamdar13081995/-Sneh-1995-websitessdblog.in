@@ -111,6 +111,7 @@ body.menu-open {
 }
 
 .hero h1{font-size:52px;font-weight:800;}
+.hero h2{font-size:40px;font-weight:800;padding:60px,60px,60px;}
 .hero-sub{font-size:22px;margin:25px auto;max-width:900px;}
 
 .section-hero{
@@ -141,16 +142,19 @@ body.menu-open {
   box-shadow:0 15px 35px rgba(0,0,0,.08);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.course-content p {
-	color:#222;
-}
+
+
 .course-content h3 {
-  color: #222;
-  font-size:14px;
-  font-weight:700;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #111;
 }
 
-
+.course-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
 
 .card:hover{
   transform: translateY(-6px) scale(1.02);
