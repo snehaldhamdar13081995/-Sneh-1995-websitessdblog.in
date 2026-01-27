@@ -141,6 +141,15 @@ body.menu-open {
   box-shadow:0 15px 35px rgba(0,0,0,.08);
   transition: transform .25s ease, box-shadow .25s ease;
 }
+.course-content p {
+	color:#222;
+}
+.course-content h3 {
+  color: #222;
+  font-size:14px;
+  font-weight:700;
+}
+
 
 
 .card:hover{
