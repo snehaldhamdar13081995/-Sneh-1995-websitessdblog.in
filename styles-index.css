@@ -263,6 +263,42 @@ body.menu-open {
   border-radius:40px;
   font-weight:700;
 }
+.quiz{
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: linear-gradient(45deg,#ff416c,#ff4b2b,#ffcc00);
+  background-size: 300% 300%;
+  color: #fff;
+  padding: 15px 26px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(255,75,43,0.7);
+  cursor: pointer;
+  z-index: 9999;
+  animation: gradientMove 4s ease infinite, pulse 2s infinite;
+}
+
+/* Gradient Motion */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow Pulse */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,75,43,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255,75,43,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,75,43,0); }
+}
+
+/* Hover Boost */
+.quiz:hover{
+  transform: scale(1.08);
+}
+
 
 .modal{
   display:none;
